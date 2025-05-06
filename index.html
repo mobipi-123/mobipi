@@ -48,13 +48,13 @@
     }"
     x-init="
       // Scroll-spy: highlight section closest to 50px from top
-      const sections = Array.from(document.querySelectorAll('[data-section]'));
-      const updateSection = () => {
+      let sections = Array.from(document.querySelectorAll('[data-section]'));
+      let updateSection = () => {
         let closestId = null, closestDist = Infinity;
-        const targetY = 50;
+        let targetY = 50;
         for (let s of sections) {
-          const r = s.getBoundingClientRect();
-          const d = Math.abs(r.top - targetY);
+          let r = s.getBoundingClientRect();
+          let d = Math.abs(r.top - targetY);
           if (r.top < window.innerHeight && r.bottom > 0 && d < closestDist) {
             closestDist = d;
             closestId = s.id;
