@@ -94,7 +94,7 @@
       <!-- Logo + Toggle -->
       <div class="flex items-center space-x-3">
         <span class="text-xl font-bold text-gray-900">Mobi-π</span>
-        <button @click="open = !open" class="p-2 bg-gray-100 rounded hover:bg-gray-200">
+        <button @click="open = !open" class="p-2 bg-transparent text-gray-700 hover:text-gray-900 focus:outline-none">
           <!-- Closed state: right-pointing arrow -->
           <template x-if="!open">
             <svg fill="#000000" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -189,7 +189,7 @@
     </aside>
   
     <!-- Main content: shifts right when sidebar is open -->
-    <main :class="{ 'lg:ml-64': open }" x-effect="document.body.classList.toggle('overflow-hidden', open && smallScreen)">
+    <main class="px-6 transition-all" :class="open ? 'lg:ml-64 ease-out duration-300' : 'lg:ml-0 ease-in duration-300'" x-effect="document.body.classList.toggle('overflow-hidden', open && smallScreen)">
       <section id="overview" data-section class="scroll-mt-24">
         <div class="flex flex-col items-center px-5 pt-24 pb-12 mx-auto max-w-3xl sm:px-6 lg:px-8 lg:pt-32">
           <div class="flex w-full text-left">
