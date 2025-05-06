@@ -46,7 +46,7 @@
       scrollingUp: true,
       smallScreen: window.innerWidth < 1024
     }"
-    x-init="
+    x-init="() => {
       // Scroll-spy: highlight section closest to 50px from top
       let sections = Array.from(document.querySelectorAll('[data-section]'));
       let updateSection = () => {
@@ -77,7 +77,7 @@
       window.addEventListener('resize', () => {
         smallScreen = window.innerWidth < 1024;
       });
-    "
+    }"
   >
   
     <!-- Topbar: always at top, slides in/out on scroll -->
