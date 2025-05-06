@@ -82,7 +82,7 @@
   
     <!-- Topbar: always at top, slides in/out on scroll -->
     <header
-      x-show="scrollingUp || scrollY === 0"
+      x-show="scrollingUp || scrollY <= 50 || open"
       x-transition:enter="transition transform ease-out duration-300"
       x-transition:enter-start="-translate-y-full"
       x-transition:enter-end="translate-y-0"
