@@ -90,7 +90,7 @@
       x-transition:leave="transition transform ease-in duration-200"
       x-transition:leave-start="translate-y-0"
       x-transition:leave-end="-translate-y-full"
-      class="fixed inset-x-0 top-0 z-50 bg-white border-b border-gray-200 px-4 py-6 flex items-center justify-between"
+      class="fixed inset-x-0 top-0 z-50 bg-white border-b border-gray-200 px-4 py-6 flex grid grid-cols-3 items-center"
     >
       <!-- 1) Left column: your toggle button -->
       <div class="flex items-center space-x-6">
@@ -115,30 +115,28 @@
       </div>
 
       <!-- 2) Center column: your mobipi_icon SVG -->
-      <div class="flex justify-center">
-        <div
-          x-show="scrollingUp || scrollY <= 50 || open"
-          x-transition:enter="transition ease-out duration-500"
-          x-transition:enter-start="opacity-0 -translate-x-[6rem]"
-          x-transition:enter-end="opacity-100 translate-x-0"
-          x-transition:leave="transition ease-in duration-200"
-          x-transition:leave-start="opacity-100 translate-x-0"
-          x-transition:leave-end="opacity-0 -translate-x-[6rem]"
-        >
-          <svg class="w-8 h-8" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
-            <title>mobipi_icon</title>
-            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-              <rect stroke="#000" stroke-width="9" x="26" y="118.5" width="204" height="94" rx="47"/>
-              <line x1="173.5" y1="9.5" x2="173.5" y2="34.5" stroke="#000" stroke-width="9" stroke-linecap="round"/>
-              <path d="M181.5,39 C190.612698,39 198.862698,42.6936508 204.834524,48.6654762 C210.806349,54.6373016 214.5,62.8873016 214.5,72 L214.5,72 L214.5,92.5 C214.5,95.9517797 213.10089,99.0767797 210.838835,101.338835 C208.57678,103.60089 205.45178,105 202,105 L202,105 L145,105 C141.54822,105 138.42322,103.60089 136.161165,101.338835 C133.89911,99.0767797 132.5,95.9517797 132.5,92.5 L132.5,92.5 L132.5,72 C132.5,62.8873016 136.193651,54.6373016 142.165476,48.6654762 C148.137302,42.6936508 156.387302,39 165.5,39 L165.5,39 Z" id="Rectangle" stroke="#000000" stroke-width="9"></path>
-              <circle fill="#000" cx="187" cy="73" r="11"/>
-              <circle stroke="#000" stroke-width="9" fill="#FFF" cx="65.5" cy="216.5" r="30.5"/>
-              <circle stroke="#000" stroke-width="9" fill="#FFF" cx="191" cy="216.5" r="30.5"/>
-              <circle fill="#000" cx="65.5" cy="216.5" r="11"/>
-              <circle fill="#000" cx="191" cy="216.5" r="11"/>
-            </g>
-          </svg>
-        </div>
+      <div class="col-start-2 justify-self-center"
+        x-show="scrollingUp || scrollY <= 50 || open"
+        x-transition:enter="transition ease-out duration-500"
+        x-transition:enter-start="opacity-0 -translate-x-[6rem]"
+        x-transition:enter-end="opacity-100 translate-x-0"
+        x-transition:leave="transition ease-in duration-200"
+        x-transition:leave-start="opacity-100 translate-x-0"
+        x-transition:leave-end="opacity-0 -translate-x-[6rem]"
+      >
+        <svg class="w-8 h-8" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+          <title>mobipi_icon</title>
+          <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <rect stroke="#000" stroke-width="10" x="26" y="118.5" width="204" height="94" rx="47"/>
+            <line x1="173.5" y1="9.5" x2="173.5" y2="34.5" stroke="#000" stroke-width="10" stroke-linecap="round"/>
+            <path d="M181.5,39 C190.612698,39 198.862698,42.6936508 204.834524,48.6654762 C210.806349,54.6373016 214.5,62.8873016 214.5,72 L214.5,72 L214.5,92.5 C214.5,95.9517797 213.10089,99.0767797 210.838835,101.338835 C208.57678,103.60089 205.45178,105 202,105 L202,105 L145,105 C141.54822,105 138.42322,103.60089 136.161165,101.338835 C133.89911,99.0767797 132.5,95.9517797 132.5,92.5 L132.5,92.5 L132.5,72 C132.5,62.8873016 136.193651,54.6373016 142.165476,48.6654762 C148.137302,42.6936508 156.387302,39 165.5,39 L165.5,39 Z" id="Rectangle" stroke="#000000" stroke-width="10"></path>
+            <circle fill="#000" cx="187" cy="73" r="11"/>
+            <circle stroke="#000" stroke-width="10" fill="#FFF" cx="65.5" cy="216.5" r="30.5"/>
+            <circle stroke="#000" stroke-width="10" fill="#FFF" cx="191" cy="216.5" r="30.5"/>
+            <circle fill="#000" cx="65.5" cy="216.5" r="11"/>
+            <circle fill="#000" cx="191" cy="216.5" r="11"/>
+          </g>
+        </svg>
       </div>
     </header>
   
