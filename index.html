@@ -93,7 +93,7 @@
       class="fixed inset-x-0 top-0 z-50 bg-white border-b border-gray-200 px-4 py-3 flex items-center justify-between shadow-sm"
     >
       <!-- Logo + Toggle -->
-      <div class="flex items-center space-x-3">
+      <div class="flex items-center space-x-6">
         <span class="text-xl font-bold text-gray-900">Mobi-π</span>
         <button @click="open = !open" class="p-2 bg-transparent text-gray-700 hover:text-gray-900 focus:outline-none">
           <!-- Closed state: right-pointing arrow -->
@@ -161,31 +161,31 @@
       x-transition:leave-end="-translate-x-full"
       class="hidden lg:block fixed top-0 left-0 h-screen w-64 bg-transparent px-4 py-8 text-sm overflow-y-auto z-30"
     >
-      <nav class="space-y-4 mt-16">
+      <nav class="h-screen flex flex-col justify-center -mt-16 space-y-4 px-4">
         <a href="#overview"
-           :class="currentSection === 'overview' ? 'bg-gray-100 text-gray-900' : 'text-gray-700'"
-           class="block px-4 py-2 rounded hover:bg-gray-100">Overview</a>
+           :class="currentSection === 'overview' ? 'bg-gray-100 text-black' : 'text-gray-700'"
+           class="block px-4 py-2 rounded hover:bg-gray-50">Overview</a>
         <a href="#video"
-           :class="currentSection === 'video' ? 'bg-gray-100 text-gray-900' : 'text-gray-700'"
-           class="block px-4 py-2 rounded hover:bg-gray-100">Video</a>
+           :class="currentSection === 'video' ? 'bg-gray-100 text-black' : 'text-gray-700'"
+           class="block px-4 py-2 rounded hover:bg-gray-50">Video</a>
         <a href="#problem"
-           :class="currentSection === 'problem' ? 'bg-gray-100 text-gray-900' : 'text-gray-700'"
-           class="block px-4 py-2 rounded hover:bg-gray-100">Problem Formulation</a>
+           :class="currentSection === 'problem' ? 'bg-gray-100 text-black' : 'text-gray-700'"
+           class="block px-4 py-2 rounded hover:bg-gray-50">Problem Formulation</a>
         <a href="#benchmark"
-           :class="currentSection === 'benchmark' ? 'bg-gray-100 text-gray-900' : 'text-gray-700'"
-           class="block px-4 py-2 rounded hover:bg-gray-100">Sim Benchmark</a>
+           :class="currentSection === 'benchmark' ? 'bg-gray-100 text-black' : 'text-gray-700'"
+           class="block px-4 py-2 rounded hover:bg-gray-50">Sim Benchmark</a>
         <a href="#metrics"
-           :class="currentSection === 'metrics' ? 'bg-gray-100 text-gray-900' : 'text-gray-700'"
-           class="block px-4 py-2 rounded hover:bg-gray-100">Metrics</a>
+           :class="currentSection === 'metrics' ? 'bg-gray-100 text-black' : 'text-gray-700'"
+           class="block px-4 py-2 rounded hover:bg-gray-50">Metrics</a>
         <a href="#method"
-           :class="currentSection === 'method' ? 'bg-gray-100 text-gray-900' : 'text-gray-700'"
-           class="block px-4 py-2 rounded hover:bg-gray-100">Method</a>
+           :class="currentSection === 'method' ? 'bg-gray-100 text-black' : 'text-gray-700'"
+           class="block px-4 py-2 rounded hover:bg-gray-50">Method</a>
         <a href="#setup"
-           :class="currentSection === 'setup' ? 'bg-gray-100 text-gray-900' : 'text-gray-700'"
-           class="block px-4 py-2 rounded hover:bg-gray-100">Real Robot Setup</a>
+           :class="currentSection === 'setup' ? 'bg-gray-100 text-black' : 'text-gray-700'"
+           class="block px-4 py-2 rounded hover:bg-gray-50">Real Robot Setup</a>
         <a href="#result"
-           :class="currentSection === 'result' ? 'bg-gray-100 text-gray-900' : 'text-gray-700'"
-           class="block px-4 py-2 rounded hover:bg-gray-100">Real Robot Results</a>
+           :class="currentSection === 'result' ? 'bg-gray-100 text-black' : 'text-gray-700'"
+           class="block px-4 py-2 rounded hover:bg-gray-50">Real Robot Results</a>
       </nav>
     </aside>
   
