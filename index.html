@@ -127,9 +127,9 @@
         <svg class="w-8 h-8" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
           <title>mobipi_icon</title>
           <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-            <rect stroke="#000" stroke-width="10" x="26" y="118.5" width="204" height="94" rx="47"/>
+            <rect stroke="#000" fill="#FFF" stroke-width="10" x="26" y="118.5" width="204" height="94" rx="47"/>
             <line x1="173.5" y1="9.5" x2="173.5" y2="34.5" stroke="#000" stroke-width="10" stroke-linecap="round"/>
-            <path d="M181.5,39 C190.612698,39 198.862698,42.6936508 204.834524,48.6654762 C210.806349,54.6373016 214.5,62.8873016 214.5,72 L214.5,72 L214.5,92.5 C214.5,95.9517797 213.10089,99.0767797 210.838835,101.338835 C208.57678,103.60089 205.45178,105 202,105 L202,105 L145,105 C141.54822,105 138.42322,103.60089 136.161165,101.338835 C133.89911,99.0767797 132.5,95.9517797 132.5,92.5 L132.5,92.5 L132.5,72 C132.5,62.8873016 136.193651,54.6373016 142.165476,48.6654762 C148.137302,42.6936508 156.387302,39 165.5,39 L165.5,39 Z" id="Rectangle" stroke="#000000" stroke-width="10"></path>
+            <path d="M181.5,39 C190.612698,39 198.862698,42.6936508 204.834524,48.6654762 C210.806349,54.6373016 214.5,62.8873016 214.5,72 L214.5,72 L214.5,92.5 C214.5,95.9517797 213.10089,99.0767797 210.838835,101.338835 C208.57678,103.60089 205.45178,105 202,105 L202,105 L145,105 C141.54822,105 138.42322,103.60089 136.161165,101.338835 C133.89911,99.0767797 132.5,95.9517797 132.5,92.5 L132.5,92.5 L132.5,72 C132.5,62.8873016 136.193651,54.6373016 142.165476,48.6654762 C148.137302,42.6936508 156.387302,39 165.5,39 L165.5,39 Z" id="Rectangle" stroke="#000000" fill="#FFF" stroke-width="10"></path>
             <circle fill="#000" cx="187" cy="73" r="11"/>
             <circle stroke="#000" stroke-width="10" fill="#FFF" cx="65.5" cy="216.5" r="30.5"/>
             <circle stroke="#000" stroke-width="10" fill="#FFF" cx="191" cy="216.5" r="30.5"/>
@@ -215,52 +215,25 @@
     </aside>
   
     <!-- Main content: shifts right when sidebar is open -->
-    <main
-      x-data="sandAnim()"
-      x-init="init()"
-      class="px-6 transition-all relative"
-      :class="open ? 'lg:ml-64 ease-out duration-300' : 'lg:ml-0 ease-in duration-300'"
-      x-effect="document.body.classList.toggle('overflow-hidden', open && smallScreen)"
-    >
-      <!-- Wrap the overview + teaser in one relative block -->
-      <div x-ref="wrapper" class="relative overflow-hidden">
-        <!-- Canvas sits behind (z-10), content above (z-20) -->
-        <canvas
-          x-ref="canvas"
-          class="absolute inset-0 w-full h-full pointer-events-none z-10"
-        ></canvas>
-    
-        <!-- 1) Overview section -->
-        <section
-          id="overview"
-          data-section
-          class="scroll-mt-24 relative z-20"
-        >
-          <div class="flex flex-col items-center px-5 pt-24 pb-12 mx-auto max-w-3xl sm:px-6 lg:px-8 lg:pt-32">
-            <div class="flex w-full text-left">
-              <div class="relative inline-flex items-center mx-auto align-middle">
-                <div class="text-left">
-                  <h1 class="max-w-5xl text-5xl font-bold leading-none tracking-tighter text-black-600 md:text-5xl lg:text-5xl lg:max-w-3xl">
-                    <span class="grad_text">Mobi-π</span>: Mobilizing Your Robot Learning Policy
-                  </h1>
-                  <p class="max-w-3xl mx-auto mt-6 text-md lg:text-md leading-relaxed text-gray-600">
-                    Anonymous Submission to CoRL 2025
-                  </p>
-                </div>
+    <main class="px-6 transition-all" :class="open ? 'lg:ml-64 ease-out duration-300' : 'lg:ml-0 ease-in duration-300'" x-effect="document.body.classList.toggle('overflow-hidden', open && smallScreen)">
+      <section id="overview" data-section class="scroll-mt-24">
+        <div class="flex flex-col items-center px-5 pt-24 pb-12 mx-auto max-w-3xl sm:px-6 lg:px-8 lg:pt-32">
+          <div class="flex w-full text-left">
+            <div class="relative inline-flex items-center mx-auto align-middle">
+              <div class="text-left">
+                <h1 class="max-w-5xl text-5xl font-bold leading-none tracking-tighter text-black-600 md:text-5xl lg:text-5xl lg:max-w-3xl">
+                  <span class="grad_text">Mobi-π</span>: Mobilizing Your Robot Learning Policy
+                </h1>
+                <p class="max-w-3xl mx-auto mt-6 text-md md:text-md lg:text-md lg:text-md leading-relaxed text-gray-600 space-x-5">
+                  Anonymous Submission to CoRL 2025
+                </p>
               </div>
             </div>
           </div>
-        </section>
-    
-        <!-- 2) Teaser image -->
-        <div class="flex flex-col items-center justify-center pb-12 mx-auto rounded-lg max-w-6xl relative z-20">
-          <img
-            src="./images/teaser.jpg"
-            class="w-full h-auto max-w-full object-cover object-center"
-          >
         </div>
-      </div>
-      <section id="abstract" data-section class="scroll-mt-24">
+        <div class="flex flex-col items-center justify-center pb-12 mx-auto rounded-lg max-w-6xl">
+          <img src="./images/teaser.jpg" class="w-full h-auto max-w-full object-cover object-center">
+        </div>
         <div class="flex flex-col items-center px-5 pt-6 pb-3 mx-auto max-w-3xl sm:px-6 lg:px-8">
           <div class="flex flex-col w-full mx-auto prose text-left text-gray-800">
               <p>Learned visuomotor policies are capable of performing increasingly complex manipulation tasks. However, the majority of these policies are trained on data collected from limited robot positions and camera viewpoints. This limits the use of these policies on mobile platforms because they will not generalize to new positions and viewpoints. This is especially true for precise tasks like pressing buttons or turning faucets. In this work, we formulate the policy mobilization problem: find a mobile robot base pose in a novel environment that is in distribution with respect to a manipulation policy trained on a limited set of camera viewpoints. Compared to retraining the policy itself to be more robust to unseen robot base pose initializations, policy mobilization decouples navigation from manipulation and thus does not require additional demonstrations. Yet, it is compatible with any approach that improves the robustness of a manipulation policy. To study policy mobilization, we introduce the MobiPi framework, which includes: (1) metrics that quantify the difficulty of mobilizing a given policy, (2) a suite of simulated mobile manipulation tasks based on RoboCasa to evaluate policy mobilization, (3) visualization tools for analysis, and (4) several baseline methods. We also propose a novel approach that bridges navigation and manipulation by optimizing the robot's base pose to align with an in-distribution base pose for a learned policy. Our approach utilizes a 3D Gaussian Splatting model for novel viewpoint synthesis, a score function to evaluate pose suitability, as well as sampling-based optimization to identify optimal robot poses. We show that our approach on average outperforms the best baseline by 7.65x in simulation and 2.38x in the real world, demonstrating its effectiveness for policy mobilization.</p>
@@ -646,50 +619,5 @@
         </div>
       </section>
     </main>
-    <script>
-      function sandAnim() {
-        return {
-          init() {
-            const wrapper = this.$refs.wrapper;
-            const canvas = this.$refs.canvas;
-            const ctx = canvas.getContext('2d');
-    
-            // match canvas to wrapper size
-            const resize = () => {
-              canvas.width = wrapper.clientWidth;
-              canvas.height = wrapper.clientHeight;
-            };
-            resize();
-            window.addEventListener('resize', resize);
-    
-            // create very slow “sand” particles
-            const particles = Array.from({ length: 80 }, () => ({
-              x: Math.random() * canvas.width,
-              y: Math.random() * canvas.height,
-              r: Math.random() * 1.2 + 0.3,
-              vy: Math.random() * 0.15 + 0.03,
-            }));
-    
-            // very soft, sandy color
-            const color = 'rgba(210,200,180,0.25)';
-    
-            // animation loop
-            const tick = () => {
-              ctx.clearRect(0, 0, canvas.width, canvas.height);
-              for (let p of particles) {
-                p.y += p.vy;
-                if (p.y - p.r > canvas.height) p.y = -p.r;
-                ctx.beginPath();
-                ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-                ctx.fillStyle = color;
-                ctx.fill();
-              }
-              requestAnimationFrame(tick);
-            };
-            tick();
-          },
-        };
-      }
-    </script>
   </body>
 </html>
