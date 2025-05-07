@@ -348,7 +348,7 @@
             </h2>
             <div class="space-y-2">
               <p>
-                How to know if your policies and scenes are difficult for policy mobilization method? We design two metrics for investigating mobilization feasibility.
+                How to know if your policies and scenes are difficult for a policy mobilization method? We design two metrics for investigating mobilization feasibility.
               </p>
               <p>
                 <b>Spatial Mobilization Metric.</b> To quantify how feasible a policy can be mobilized from a spatial perspective, we evaluate how pose perturbations affect the task success of fixed-based manipulation policies. Specifically, we measure the task success \(S_\pi(\sigma)\) of policy \(\pi\) given Gaussian noise applied to the base pose modeled as \(N\sim(\mu=0, \sigma^2)\). We then fit an exponential curve using the following form: $$S_\pi(\sigma) = C_0 \cdot e^{-\gamma \sigma}.$$ Here, \(C_0\) and \(\gamma\) are parameters to be fitted. From this fitted curve, we extract the <i>mobilization feasibility metric</i>: $$\phi = \frac{\ln 2}{\gamma}.$$
