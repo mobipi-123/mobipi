@@ -3,7 +3,6 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-
     <meta name="description" content="Project website for Mobi-π">
     <meta name="author" content="Anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,16 +10,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
     <script src="https://unpkg.com/alpinejs" defer></script>
-</script>
-    <!-- Google tag (gtag.js) -->
-    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-LRVH8WKJNF"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-LRVH8WKJNF');
-    </script> -->
     <title>Mobi-π</title>
   </head>
 
@@ -127,9 +116,9 @@
         <svg class="w-8 h-8" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
           <title>mobipi_icon</title>
           <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-            <rect stroke="#000" stroke-width="10" x="26" y="118.5" width="204" height="94" rx="47"/>
+            <rect stroke="#000" fill="#FFF" stroke-width="10" x="26" y="118.5" width="204" height="94" rx="47"/>
             <line x1="173.5" y1="9.5" x2="173.5" y2="34.5" stroke="#000" stroke-width="10" stroke-linecap="round"/>
-            <path d="M181.5,39 C190.612698,39 198.862698,42.6936508 204.834524,48.6654762 C210.806349,54.6373016 214.5,62.8873016 214.5,72 L214.5,72 L214.5,92.5 C214.5,95.9517797 213.10089,99.0767797 210.838835,101.338835 C208.57678,103.60089 205.45178,105 202,105 L202,105 L145,105 C141.54822,105 138.42322,103.60089 136.161165,101.338835 C133.89911,99.0767797 132.5,95.9517797 132.5,92.5 L132.5,92.5 L132.5,72 C132.5,62.8873016 136.193651,54.6373016 142.165476,48.6654762 C148.137302,42.6936508 156.387302,39 165.5,39 L165.5,39 Z" id="Rectangle" stroke="#000000" stroke-width="10"></path>
+            <path d="M181.5,39 C190.612698,39 198.862698,42.6936508 204.834524,48.6654762 C210.806349,54.6373016 214.5,62.8873016 214.5,72 L214.5,72 L214.5,92.5 C214.5,95.9517797 213.10089,99.0767797 210.838835,101.338835 C208.57678,103.60089 205.45178,105 202,105 L202,105 L145,105 C141.54822,105 138.42322,103.60089 136.161165,101.338835 C133.89911,99.0767797 132.5,95.9517797 132.5,92.5 L132.5,92.5 L132.5,72 C132.5,62.8873016 136.193651,54.6373016 142.165476,48.6654762 C148.137302,42.6936508 156.387302,39 165.5,39 L165.5,39 Z" id="Rectangle" stroke="#000000" fill="#FFF" stroke-width="10"></path>
             <circle fill="#000" cx="187" cy="73" r="11"/>
             <circle stroke="#000" stroke-width="10" fill="#FFF" cx="65.5" cy="216.5" r="30.5"/>
             <circle stroke="#000" stroke-width="10" fill="#FFF" cx="191" cy="216.5" r="30.5"/>
@@ -215,55 +204,28 @@
     </aside>
   
     <!-- Main content: shifts right when sidebar is open -->
-    <main
-      x-data="sandAnim()"
-      x-init="init()"
-      class="px-6 transition-all relative"
-      :class="open ? 'lg:ml-64 ease-out duration-300' : 'lg:ml-0 ease-in duration-300'"
-      x-effect="document.body.classList.toggle('overflow-hidden', open && smallScreen)"
-    >
-      <!-- Wrap the overview + teaser in one relative block -->
-      <div x-ref="wrapper" class="relative overflow-hidden">
-        <!-- Canvas sits behind (z-10), content above (z-20) -->
-        <canvas
-          x-ref="canvas"
-          class="absolute inset-0 w-full h-full pointer-events-none z-10"
-        ></canvas>
-    
-        <!-- 1) Overview section -->
-        <section
-          id="overview"
-          data-section
-          class="scroll-mt-24 relative z-20"
-        >
-          <div class="flex flex-col items-center px-5 pt-24 pb-12 mx-auto max-w-3xl sm:px-6 lg:px-8 lg:pt-32">
-            <div class="flex w-full text-left">
-              <div class="relative inline-flex items-center mx-auto align-middle">
-                <div class="text-left">
-                  <h1 class="max-w-5xl text-5xl font-bold leading-none tracking-tighter text-black-600 md:text-5xl lg:text-5xl lg:max-w-3xl">
-                    <span class="grad_text">Mobi-π</span>: Mobilizing Your Robot Learning Policy
-                  </h1>
-                  <p class="max-w-3xl mx-auto mt-6 text-md lg:text-md leading-relaxed text-gray-600">
-                    Anonymous Submission to CoRL 2025
-                  </p>
-                </div>
+    <main class="px-6 transition-all" :class="open ? 'lg:ml-64 ease-out duration-300' : 'lg:ml-0 ease-in duration-300'" x-effect="document.body.classList.toggle('overflow-hidden', open && smallScreen)">
+      <section id="overview" data-section class="scroll-mt-24">
+        <div class="flex flex-col items-center px-5 pt-24 pb-12 mx-auto max-w-3xl sm:px-6 lg:px-8 lg:pt-32">
+          <div class="flex w-full text-left">
+            <div class="relative inline-flex items-center mx-auto align-middle">
+              <div class="text-left">
+                <h1 class="max-w-5xl text-5xl font-bold leading-none tracking-tighter text-black-600 md:text-5xl lg:text-5xl lg:max-w-3xl">
+                  <span class="grad_text">Mobi-π</span>: Mobilizing Your Robot Learning Policy
+                </h1>
+                <p class="max-w-3xl mx-auto mt-6 text-md md:text-md lg:text-md lg:text-md leading-relaxed text-gray-600 space-x-5">
+                  Anonymous Submission to CoRL 2025
+                </p>
               </div>
             </div>
           </div>
-        </section>
-    
-        <!-- 2) Teaser image -->
-        <div class="flex flex-col items-center justify-center pb-12 mx-auto rounded-lg max-w-6xl relative z-20">
-          <img
-            src="./images/teaser.jpg"
-            class="w-full h-auto max-w-full object-cover object-center"
-          >
         </div>
-      </div>
-      <section id="abstract" data-section class="scroll-mt-24">
+        <div class="flex flex-col items-center justify-center pb-12 mx-auto rounded-lg max-w-6xl">
+          <img src="./images/teaser.jpg" class="w-full h-auto max-w-full object-cover object-center">
+        </div>
         <div class="flex flex-col items-center px-5 pt-6 pb-3 mx-auto max-w-3xl sm:px-6 lg:px-8">
           <div class="flex flex-col w-full mx-auto prose text-left text-gray-800">
-              <p>Learned visuomotor policies are capable of performing increasingly complex manipulation tasks. However, the majority of these policies are trained on data collected from limited robot positions and camera viewpoints. This limits the use of these policies on mobile platforms because they will not generalize to new positions and viewpoints. This is especially true for precise tasks like pressing buttons or turning faucets. In this work, we formulate the policy mobilization problem: find a mobile robot base pose in a novel environment that is in distribution with respect to a manipulation policy trained on a limited set of camera viewpoints. Compared to retraining the policy itself to be more robust to unseen robot base pose initializations, policy mobilization decouples navigation from manipulation and thus does not require additional demonstrations. Yet, it is compatible with any approach that improves the robustness of a manipulation policy. To study policy mobilization, we introduce the MobiPi framework, which includes: (1) metrics that quantify the difficulty of mobilizing a given policy, (2) a suite of simulated mobile manipulation tasks based on RoboCasa to evaluate policy mobilization, (3) visualization tools for analysis, and (4) several baseline methods. We also propose a novel approach that bridges navigation and manipulation by optimizing the robot's base pose to align with an in-distribution base pose for a learned policy. Our approach utilizes a 3D Gaussian Splatting model for novel viewpoint synthesis, a score function to evaluate pose suitability, as well as sampling-based optimization to identify optimal robot poses. We show that our approach on average outperforms the best baseline by 7.65x in simulation and 2.38x in the real world, demonstrating its effectiveness for policy mobilization.</p>
+              <p>Learned visuomotor policies are capable of performing increasingly complex manipulation tasks. However, the majority of these policies are trained on data collected from limited robot positions and camera viewpoints, which limits the use of these policies on mobile platforms. In this work, we formulate the policy mobilization problem: find a mobile robot base pose in a novel environment that is in distribution with respect to a manipulation policy trained on a limited set of camera viewpoints. Compared to retraining the policy itself to be more robust to unseen robot base pose initializations, policy mobilization decouples navigation from manipulation and thus does not require additional demonstrations. Yet, it is compatible with any approach that improves the robustness of a manipulation policy. To study policy mobilization, we introduce the MobiPi framework, which includes: (1) metrics that quantify the difficulty of mobilizing a given policy, (2) a suite of simulated mobile manipulation tasks based on RoboCasa to evaluate policy mobilization, (3) visualization tools for analysis, and (4) several baseline methods. We also propose a novel approach that bridges navigation and manipulation by optimizing the robot's base pose to align with an in-distribution base pose for a learned policy. Our approach utilizes a 3D Gaussian Splatting model for novel viewpoint synthesis, a score function to evaluate pose suitability, as well as sampling-based optimization to identify optimal robot poses. We show that our approach on average outperforms the best baseline by 7.65x in simulation and 2.38x in the real world, demonstrating its effectiveness for policy mobilization.</p>
               <div class="w-full bg-white border border-gray-200 rounded-2xl shadow-sm p-6 mt-6">
                 <span class="inline-flex items-center bg-orange-100 text-orange-800 text-sm font-semibold px-3 py-1 rounded-full">
                   TL;DR
@@ -278,13 +240,13 @@
         </div>
       </section>
       <section id="video" data-section class="scroll-mt-24">
-        <div class="flex flex-col items-center px-5 pt-6 pb-3 mx-auto max-w-3xl sm:px-6 lg:px-8">
+        <!-- <div class="flex flex-col items-center px-5 pt-6 pb-3 mx-auto max-w-3xl sm:px-6 lg:px-8">
           <div class="flex flex-col w-full max-w-6xl mx-auto prose text-left text-gray-800">
-            <h2 class="text-2xl font-bold pb-5"><span class="grad_text">Video</span></h2>
+            <h2 class="text-2xl font-bold pb-5"><span class="grad_text">Technical Summary</span></h2>
           </div>
-        </div>
-        <div class="flex flex-col items-center px-5 pt-0 pb-3 mx-auto max-w-6xl sm:px-6 lg:px-8">
-          <video height="auto" width="100%" controls="" style="border: 1px solid #000;">
+        </div> -->
+        <div class="flex flex-col items-center px-5 pt-6 pb-3 mx-auto max-w-6xl sm:px-6 lg:px-8">
+          <video class="border-5 border-solid border-gray-200 rounded-2xl" height="auto" width="100%" controls="">
             <source src="./video/summary.mp4" type="video/mp4">
           </video>
         </div>
@@ -375,7 +337,7 @@
             </h2>
             <div class="space-y-2">
               <p>
-                How to know if your policies and scenes are difficult for policy mobilization method? We design two metrics for investigating mobilization feasibility.
+                How to know if your policies and scenes are difficult for a policy mobilization method? We design two metrics for investigating mobilization feasibility.
               </p>
               <p>
                 <b>Spatial Mobilization Metric.</b> To quantify how feasible a policy can be mobilized from a spatial perspective, we evaluate how pose perturbations affect the task success of fixed-based manipulation policies. Specifically, we measure the task success \(S_\pi(\sigma)\) of policy \(\pi\) given Gaussian noise applied to the base pose modeled as \(N\sim(\mu=0, \sigma^2)\). We then fit an exponential curve using the following form: $$S_\pi(\sigma) = C_0 \cdot e^{-\gamma \sigma}.$$ Here, \(C_0\) and \(\gamma\) are parameters to be fitted. From this fitted curve, we extract the <i>mobilization feasibility metric</i>: $$\phi = \frac{\ln 2}{\gamma}.$$
@@ -459,19 +421,19 @@
               <div class="grid w-9/12 grid-cols-1 gap-3 mx-auto md:grid-cols-3 md:w-full">
                 <div class="p-2">
                   <video height="auto" width="100%" style="border: 1px solid #000;" autoplay loop muted>
-                    <source src="./video/eval/tomato_mobpi.mp4" type="video/mp4">
+                    <source src="./video/eval/tomato_mobipi.mp4" type="video/mp4">
                   </video>
                   <p class="pt-1 text-center">Pour Tomatoes</p>
                 </div>
                 <div class="p-2">
                   <video height="auto" width="100%" style="border: 1px solid #000;" autoplay loop muted>
-                    <source src="./video/eval/chip_mobpi.mp4" type="video/mp4">
+                    <source src="./video/eval/chip_mobipi.mp4" type="video/mp4">
                   </video>
                   <p class="pt-1 text-center">Pick Chips</p>
                 </div>
                 <div class="p-2">
                   <video height="auto" width="100%" style="border: 1px solid #000;" autoplay loop muted>
-                    <source src="./video/eval/paper_mobpi.mp4" type="video/mp4">
+                    <source src="./video/eval/towel_mobipi.mp4" type="video/mp4">
                   </video>
                   <p class="pt-1 text-center">Bimanual Grab Paper Towels</p>
                 </div>
@@ -554,23 +516,23 @@
           <div class="flex flex-col w-full max-w-6xl mx-auto prose text-left text-gray-800">
             <div class="space-y-2 mt-4">
               <p>
-                Below we show qualitative rollout videos of each baseline and method in all three tasks. All videos are played at <b>2x</b> speed.
+                Below we show qualitative rollout videos of each baseline and method in all three tasks. All videos are played at <b>4x</b> speed.
               </p>
             </div>
             <div>
               <!-- 🍅 Pour Tomatoes -->
-              <p class="font-bold pt-4 pb-2">Pour Tomatoes</p>
+              <p class="font-bold pt-4 pb-2">🍅 Pour Tomatoes</p>
               <div class="relative items-center w-full px-2 pt-1 pb-1 mx-auto max-w-6xl">
                 <div class="grid w-9/12 grid-cols-1 gap-3 mx-auto md:grid-cols-2 md:w-full">
                   <div class="p-2">
-                    <video width="100%" style="border: 1px solid #000;" autoplay loop muted>
+                    <video class="border-5 border-solid border-gray-200 rounded-2xl" width="100%" autoplay loop muted>
                       <source src="./video/eval/tomato_ilnav.mp4" type="video/mp4">
                     </video>
                     <p class="pt-1 text-center">IL w/ Nav</p>
                   </div>
 
                   <div class="p-2">
-                    <video width="100%" style="border: 1px solid #000;" autoplay loop muted>
+                    <video class="border-5 border-solid border-gray-200 rounded-2xl" width="100%" autoplay loop muted>
                       <source src="./video/eval/tomato_human.mp4" type="video/mp4">
                     </video>
                     <p class="pt-1 text-center">Human</p>
@@ -580,25 +542,25 @@
               <div class="relative items-center w-full px-2 pt-1 pb-1 mx-auto max-w-6xl">
                 <div class="p-2 mx-auto">
                   <video width="100%" style="border: 1px solid #000;" autoplay loop muted>
-                    <source src="./video/eval/tomato_mobpi.mp4" type="video/mp4">
+                    <source src="./video/eval/tomato_mobipi.mp4" type="video/mp4">
                   </video>
                   <p class="pt-1 text-center">Our Method</p>
                 </div>
               </div>
 
               <!-- 🍟 Pick Chips -->
-              <p class="font-bold pt-4 pb-2">Pick Chips</p>
+              <p class="font-bold pt-4 pb-2">🍟 Pick Chips</p>
               <div class="relative items-center w-full px-2 pt-1 pb-1 mx-auto max-w-6xl">
                 <div class="grid w-9/12 grid-cols-1 gap-3 mx-auto md:grid-cols-2 md:w-full">
                   <div class="p-2">
-                    <video width="100%" style="border: 1px solid #000;" autoplay loop muted>
+                    <video class="border-5 border-solid border-gray-200 rounded-2xl" width="100%" autoplay loop muted>
                       <source src="./video/eval/chip_ilnav.mp4" type="video/mp4">
                     </video>
                     <p class="pt-1 text-center">IL w/ Nav</p>
                   </div>
 
                   <div class="p-2">
-                    <video width="100%" style="border: 1px solid #000;" autoplay loop muted>
+                    <video class="border-5 border-solid border-gray-200 rounded-2xl" width="100%" autoplay loop muted>
                       <source src="./video/eval/chip_human.mp4" type="video/mp4">
                     </video>
                     <p class="pt-1 text-center">Human</p>
@@ -608,26 +570,26 @@
               <div class="relative items-center w-full px-2 pt-1 pb-1 mx-auto max-w-6xl">
                 <div class="p-2 mx-auto">
                   <video width="100%" style="border: 1px solid #000;" autoplay loop muted>
-                    <source src="./video/eval/chip_mobpi.mp4" type="video/mp4">
+                    <source src="./video/eval/chip_mobipi.mp4" type="video/mp4">
                   </video>
                   <p class="pt-1 text-center">Our Method</p>
                 </div>
               </div>
 
               <!-- 🧻 Bimanual Grab Paper Towels -->
-              <p class="font-bold pt-4 pb-2">Bimanual Grab Paper Towels</p>
+              <p class="font-bold pt-4 pb-2">🧻 Bimanual Grab Paper Towels</p>
               <div class="relative items-center w-full px-2 pt-1 pb-1 mx-auto max-w-6xl">
                 <div class="grid w-9/12 grid-cols-1 gap-3 mx-auto md:grid-cols-2 md:w-full">
                   <div class="p-2">
                     <video width="100%" style="border: 1px solid #000;" autoplay loop muted>
-                      <source src="./video/eval/paper_ilnav.mp4" type="video/mp4">
+                      <source src="./video/eval/towel_ilnav.mp4" type="video/mp4">
                     </video>
                     <p class="pt-1 text-center">IL w/ Nav</p>
                   </div>
 
                   <div class="p-2">
                     <video width="100%" style="border: 1px solid #000;" autoplay loop muted>
-                      <source src="./video/eval/paper_human.mp4" type="video/mp4">
+                      <source src="./video/eval/towel_human.mp4" type="video/mp4">
                     </video>
                     <p class="pt-1 text-center">Human</p>
                   </div>
@@ -636,7 +598,7 @@
               <div class="relative items-center w-full px-2 pt-1 pb-1 mx-auto max-w-6xl">
                 <div class="p-2 mx-auto">
                   <video width="100%" style="border: 1px solid #000;" autoplay loop muted>
-                    <source src="./video/eval/paper_mobpi.mp4" type="video/mp4">
+                    <source src="./video/eval/towel_mobipi.mp4" type="video/mp4">
                   </video>
                   <p class="pt-1 text-center">Our Method</p>
                 </div>
@@ -645,51 +607,62 @@
           </div>
         </div>
       </section>
+      <section id="result" data-section class="scroll-mt-24">
+        <div class="flex flex-col items-center px-5 pt-6 pb-3 mx-auto max-w-3xl sm:px-6 lg:px-8">
+          <div class="flex flex-col w-full max-w-6xl mx-auto prose text-left text-gray-800">
+            <h2 class="text-2xl font-bold pb-5"><span class="grad_text">Additional Results</span></h2>
+            <div class="space-y-2">
+              <p>
+                We also demonstrate real-world deployment of our method in a variety of interesting ways. First, in a real kitchen setting, we show that by querying our method multiple times, our method is capable of finding proper initial robot poses for multiple drawer closing skill executions in the scene, thus unlocking manipulation skill sequencing in the wild. Second, we show that our method generalizes zero-shot to unseen scene layouts in the Pick Chips task. Third, we demonstrate in the Pour Tomatoes task that our method is capable of operating in a large scene. Finally, we show that our method can be easily extended to adapt to unseen object heights.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col items-center px-5 pt-6 pb-3 mx-auto max-w-3xl sm:px-6 lg:px-8">
+          <div class="flex flex-col w-full max-w-6xl mx-auto prose text-left text-gray-800">
+            <div>
+              <p class="font-bold pt-4 pb-2">Chaining a sequence of manipulation skills in-the-wild.</p>
+              <div class="relative items-center w-full px-2 pt-1 pb-1 mx-auto max-w-6xl">
+                <div class="p-2 mx-auto">
+                  <video width="100%" autoplay loop muted>
+                    <source src="./video/qualitative/drawer.mp4" type="video/mp4">
+                  </video>
+                </div>
+              </div>
+            </div>
+            <div>
+              <p class="font-bold pt-4 pb-2">Generalizing zero-shot to unseen scene layouts.</p>
+              <div class="relative items-center w-full px-2 pt-1 pb-1 mx-auto max-w-6xl">
+                <div class="p-2 mx-auto">
+                  <video width="100%" autoplay loop muted>
+                    <source src="./video/qualitative/chips.mp4" type="video/mp4">
+                  </video>
+                </div>
+              </div>
+            </div>
+            <div>
+              <p class="font-bold pt-4 pb-2">Operating in large spaces that the policies have not explored during training.</p>
+              <div class="relative items-center w-full px-2 pt-1 pb-1 mx-auto max-w-6xl">
+                <div class="p-2 mx-auto">
+                  <video width="100%" autoplay loop muted>
+                    <source src="./video/qualitative/tomato.mp4" type="video/mp4">
+                  </video>
+                </div>
+              </div>
+            </div>
+            <div>
+              <p class="font-bold pt-4 pb-2">Adapting to novel object heights.</p>
+              <div class="relative items-center w-full px-2 pt-1 pb-1 mx-auto max-w-6xl">
+                <div class="p-2 mx-auto">
+                  <video width="100%" autoplay loop muted>
+                    <source src="./video/qualitative/towel.mp4" type="video/mp4">
+                  </video>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
-    <script>
-      function sandAnim() {
-        return {
-          init() {
-            const wrapper = this.$refs.wrapper;
-            const canvas = this.$refs.canvas;
-            const ctx = canvas.getContext('2d');
-    
-            // match canvas to wrapper size
-            const resize = () => {
-              canvas.width = wrapper.clientWidth;
-              canvas.height = wrapper.clientHeight;
-            };
-            resize();
-            window.addEventListener('resize', resize);
-    
-            // create very slow “sand” particles
-            const particles = Array.from({ length: 80 }, () => ({
-              x: Math.random() * canvas.width,
-              y: Math.random() * canvas.height,
-              r: Math.random() * 1.2 + 0.3,
-              vy: Math.random() * 0.15 + 0.03,
-            }));
-    
-            // very soft, sandy color
-            const color = 'rgba(210,200,180,0.25)';
-    
-            // animation loop
-            const tick = () => {
-              ctx.clearRect(0, 0, canvas.width, canvas.height);
-              for (let p of particles) {
-                p.y += p.vy;
-                if (p.y - p.r > canvas.height) p.y = -p.r;
-                ctx.beginPath();
-                ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-                ctx.fillStyle = color;
-                ctx.fill();
-              }
-              requestAnimationFrame(tick);
-            };
-            tick();
-          },
-        };
-      }
-    </script>
   </body>
 </html>
